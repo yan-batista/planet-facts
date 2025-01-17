@@ -1,0 +1,17 @@
+<header>
+    <div class="text-content">
+        <h1>The Planets</h1>
+        <img src="/assets/icon-hamburger.svg" (click)="onClickSwitchMobileVisibility()"/>
+    </div>
+    <nav [class]="mobileNavVisible ? '' : 'hidden'">
+        <ul>
+            @for (planet of planets; track planet) {
+                <li (click)="onClickSelectPlanet(planet)">
+                    <div class='circle {{planet}}'></div>
+                    <p>{{planet}}</p>
+                    <img src="/assets/icon-chevron.svg" />
+                </li>
+            }
+        </ul>
+    </nav>
+</header>

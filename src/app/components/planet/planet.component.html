@@ -1,0 +1,36 @@
+<div class="planet-selector">
+    <p [class]="selected === 'overview' ? 'selected' : ''" (click)="onClickChangeTab('overview')">Overview</p>
+    <p [class]="selected === 'structure' ? 'selected' : ''" (click)="onClickChangeTab('structure')">Structure</p>
+    <p [class]="selected === 'surface' ? 'selected' : ''" (click)="onClickChangeTab('surface')">Surface</p>
+</div>
+
+<div class="planet-image">
+    @if (selected == "structure") {
+        <img src="{{planetData.images.internal}}">
+    } @else {
+        <img src="{{planetData.images.planet}}">
+    }
+    <img src="{{planetData.images.geology}}" [class]="{'geology-icon': true, 'hidden': selected !== 'surface'}">
+</div>
+
+<div class="planet-info">
+    <h1>{{planetData.name}}</h1>
+
+    @if (selected == "overview") {
+        <p>{{planetData.overview.content}} </p>
+        <span>Source: <a target="_blank" href={{planetData.overview.source}}>Wikipedia <img src="/assets/icon-source.svg"/></a></span>
+    } @else if (selected == "structure") {
+        <p>{{planetData.structure.content}} </p>
+        <span>Source: <a target="_blank" href={{planetData.structure.source}}>Wikipedia <img src="/assets/icon-source.svg"/></a></span>
+    } @else {
+        <p>{{planetData.geology.content}} </p>
+        <span>Source: <a target="_blank" href={{planetData.geology.source}}>Wikipedia <img src="/assets/icon-source.svg"/></a></span>
+    }
+</div>
+
+<div class="planet-additional-info">
+    <p>Rotation Time <span>{{planetData.rotation}}</span></p>
+    <p>Revolution Time <span>{{planetData.revolution}}</span></p>
+    <p>Radius <span>{{planetData.radius}}</span></p>
+    <p>Average Temp. <span>{{planetData.temperature}}</span></p>
+</div>

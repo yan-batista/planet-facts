@@ -1,21 +1,16 @@
-import { Component } from '@angular/core';
-import { PlanetComponent } from './components/planet/planet.component';
-import { NavComponent } from './components/nav/nav.component';
-import { Planet } from './types/planet_type';
+import { Component, Input } from '@angular/core';
+import { Planet } from '../../types/planet_type';
 
-import data from './data.json';
+type contentSelection = "overview" | "structure" | "surface";
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [NavComponent, PlanetComponent],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  selector: 'app-planet',
+  imports: [],
+  templateUrl: './planet.component.html',
+  styleUrl: './planet.component.scss'
 })
-export class AppComponent {
-  title = 'planets';
-  planetSelection = 'earth';
-  planetData: Planet = {
+export class PlanetComponent {
+  @Input() planetData: Planet = {
     "name": "Earth",
     "overview": {
       "content": "Third planet from the Sun and the only known planet to harbor life. About 29.2% of Earth's surface is land with remaining 70.8% is covered with water. Earth's distance from the Sun, physical properties and geological history have allowed life to evolve and thrive.",
@@ -39,16 +34,9 @@ export class AppComponent {
       "geology": "./assets/geology-earth.png"
     }
   };
+  selected: contentSelection = "overview";
 
-  planetSelectionTrigger(planet: string) {
-    this.planetSelection = planet;
-
-    const foundPlanet = data.find(item => item.name.toLowerCase() === planet.toLowerCase() || null)
-
-    if(foundPlanet) {
-      this.planetData = foundPlanet
-    } else {
-      this.planetData = data[0]
-    }
+  onClickChangeTab(tab: contentSelection) {
+    this.selected = tab;
   }
 }

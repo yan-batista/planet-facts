@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+@use './variables.scss' as var;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*, button, input {
+    font-family: "Spartan", serif;
+}
+
+body {
+    background-color: var.$bg-color;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    background: url('/assets/background-stars.svg') no-repeat center center;
+    background-size: cover;
+}
+
+.hidden {
+    display: none;
+}
