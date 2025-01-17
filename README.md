@@ -1,59 +1,42 @@
-# Planets
+# Frontend Mentor - Planet Facts
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+This is a solution to the Planets fact site challenge on Frontend Mentor. Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Development server
+## Table of contents
 
-To start a local development server, run:
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+- [Author](#author)
 
-```bash
-ng serve
-```
+## Overview
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### The challenge
 
-## Code scaffolding
+Users should be able to:
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- View each planet page and toggle between the "Overview", "Internal Structure", and "Surface Geology" tabs
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
 
-```bash
-ng generate component component-name
-```
+### Screenshot
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+<p align="center" >
+</p>
 
-```bash
-ng generate --help
-```
+## My process
 
-## Building
+### Built with
 
-To build the project run:
+- [Angular](https://angular.dev/)
+- [SCSS](https://sass-lang.com/)
+- [Typescript](https://www.typescriptlang.org/)
 
-```bash
-ng build
-```
+## Author
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Frontend Mentor - [@yan-batista](https://www.frontendmentor.io/profile/yan-batista-1326)
+- Github - [@yan-batista](https://github.com/yan-batista)
