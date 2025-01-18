@@ -58,7 +58,7 @@
     }
 }
 
-.planet-info {
+.planet-info-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -123,5 +123,80 @@
         font-size: 20px;
         font-weight: 400px;
         color: var.$white;
+    }
+}
+
+@media (min-width: var.$tablet) {
+    .planet-info {
+        color: #FFF;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        margin: 70px var.$bodyMargin;
+        gap: 70px;
+
+        .planet-info-text {
+            align-items: flex-start;
+            text-align: start;
+            margin: 0;
+            flex: 1;
+        }
+
+        .planet-info-selector {
+            flex: 1;
+            width: fit-content;
+
+            >p {
+               border: 1px solid var.$lightGrey;
+               text-transform: uppercase;
+               font-family: 'Spartan', serif;
+               font-weight: 700;
+               font-size: 9px;
+               letter-spacing: 2px;
+               padding: 20px 0;
+            }
+
+            >p:not(:last-child) {
+                margin-bottom: 16px;
+            }
+
+            @each $planet, $color in var.$planet-colors {
+                >p.#{$planet} {
+                    &.selected {
+                        border: 1px solid $color;
+                        background-color: $color;
+                    }
+                }
+            }
+            
+            @for $i from 1 through 3 {
+                >p:nth-child(#{$i})::before {
+                    content: "0#{$i}";
+                    margin: 0 18px;
+                }
+            }
+        }
+    }
+
+    .planet-additional-info {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+
+        p {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            height: 100%;
+            gap: 19px;
+            flex: 1;
+
+            span {
+                font-weight: 400;
+                font-size: 24px;
+            }
+        }
     }
 }
