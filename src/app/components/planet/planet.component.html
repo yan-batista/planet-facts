@@ -4,49 +4,51 @@
     <p [class]="selected === 'surface' ? 'selected' : ''" (click)="onClickChangeTab('surface')">Surface</p>
 </div>
 
-<div class="planet-image">
-    @if (selected == "structure") {
-        <img src="{{planetData.images.internal}}">
-    } @else {
-        <img src="{{planetData.images.planet}}">
-    }
-    <img src="{{planetData.images.geology}}" [class]="{'geology-icon': true, 'hidden': selected !== 'surface'}">
-</div>
-
-<div class="planet-info">
-    <div class="planet-info-text">
-        <h1>{{planetData.name}}</h1>
-
-        @if (selected == "overview") {
-            <p>{{planetData.overview.content}} </p>
-            <span>Source: <a target="_blank" href={{planetData.overview.source}}>Wikipedia <img src="/assets/icon-source.svg"/></a></span>
-        } @else if (selected == "structure") {
-            <p>{{planetData.structure.content}} </p>
-            <span>Source: <a target="_blank" href={{planetData.structure.source}}>Wikipedia <img src="/assets/icon-source.svg"/></a></span>
+<div class="planet-content">
+    <div class="planet-image">
+        @if (selected == "structure") {
+            <img src="{{planetData.images.internal}}">
         } @else {
-            <p>{{planetData.geology.content}} </p>
-            <span>Source: <a target="_blank" href={{planetData.geology.source}}>Wikipedia <img src="/assets/icon-source.svg"/></a></span>
+            <img src="{{planetData.images.planet}}">
         }
+        <img src="{{planetData.images.geology}}" [class]="{'geology-icon': true, 'hidden': selected !== 'surface'}">
     </div>
-    <div class="planet-info-selector hide-mobile">
-        <p 
-            class="{{planetData.name.toLowerCase()}}" 
-            [class.selected]="selected === 'overview' ? 'selected' : ''"
-            (click)="onClickChangeTab('overview')">
-            Overview
-        </p>
-        <p 
-            class="{{planetData.name.toLowerCase()}}" 
-            [class.selected]="selected === 'structure' ? 'selected' : ''"
-            (click)="onClickChangeTab('structure')">
-            Internal Structure
-        </p>
-        <p 
-            class="{{planetData.name.toLowerCase()}}" 
-            [class.selected]="selected === 'surface' ? 'selected' : ''"
-            (click)="onClickChangeTab('surface')">
-            Surface Geology
-        </p>
+    
+    <div class="planet-info">
+        <div class="planet-info-text">
+            <h1>{{planetData.name}}</h1>
+    
+            @if (selected == "overview") {
+                <p>{{planetData.overview.content}} </p>
+                <span>Source: <a target="_blank" href={{planetData.overview.source}}>Wikipedia <img src="/assets/icon-source.svg"/></a></span>
+            } @else if (selected == "structure") {
+                <p>{{planetData.structure.content}} </p>
+                <span>Source: <a target="_blank" href={{planetData.structure.source}}>Wikipedia <img src="/assets/icon-source.svg"/></a></span>
+            } @else {
+                <p>{{planetData.geology.content}} </p>
+                <span>Source: <a target="_blank" href={{planetData.geology.source}}>Wikipedia <img src="/assets/icon-source.svg"/></a></span>
+            }
+        </div>
+        <div class="planet-info-selector hide-mobile">
+            <p 
+                class="{{planetData.name.toLowerCase()}}" 
+                [class.selected]="selected === 'overview' ? 'selected' : ''"
+                (click)="onClickChangeTab('overview')">
+                Overview
+            </p>
+            <p 
+                class="{{planetData.name.toLowerCase()}}" 
+                [class.selected]="selected === 'structure' ? 'selected' : ''"
+                (click)="onClickChangeTab('structure')">
+                Internal Structure
+            </p>
+            <p 
+                class="{{planetData.name.toLowerCase()}}" 
+                [class.selected]="selected === 'surface' ? 'selected' : ''"
+                (click)="onClickChangeTab('surface')">
+                Surface Geology
+            </p>
+        </div>
     </div>
 </div>
 

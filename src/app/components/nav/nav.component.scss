@@ -122,3 +122,23 @@ nav {
         }
     }
 }
+
+@media (min-width: var.$desktop) {
+    header {
+        display: flex;
+        flex-direction: row;
+
+        .text-content {
+            justify-content: flex-start;
+        }
+
+        nav {
+            justify-content: flex-end;
+        }
+
+        li {
+            height: 100%;
+            padding-top: 39px;
+        }
+    }
+}

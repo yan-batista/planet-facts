@@ -1,5 +1,18 @@
 @use "../../../variables.scss" as var;
 
+:host > div {
+    padding: 0 24px;
+    max-width: 1024px;
+    width: 100%;
+}
+
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .planet-selector {
     display: flex;
     flex-direction: row;
@@ -46,7 +59,7 @@
 
     img {
         width: 175px;
-        height: 175px;
+        height: auto;
     }
 
     >.geology-icon {
@@ -65,7 +78,6 @@
     align-items: center;
     color: #FFF;
     text-align: center;
-    margin: 0 var.$bodyMargin;
     margin-top: 65px;
 
     h1 {
@@ -97,7 +109,6 @@
 }
 
 .planet-additional-info {
-    margin: 0 var.$bodyMargin;
     margin-top: 27px;
     margin-bottom: 47px;
 
@@ -127,13 +138,17 @@
 }
 
 @media (min-width: var.$tablet) {
+    :host > div {
+        padding: 0 40px;
+    }
+
     .planet-info {
         color: #FFF;
         display: flex;
         flex-direction: row;
         align-items: flex-start;
         justify-content: center;
-        margin: 70px var.$bodyMargin;
+        margin: 70px 0;//var.$bodyMargin;
         gap: 70px;
 
         .planet-info-text {
@@ -196,6 +211,50 @@
             span {
                 font-weight: 400;
                 font-size: 24px;
+            }
+        }
+    }
+}
+
+@media (min-width: var.$desktop) {
+    :host > div {
+        padding: 0 100px;
+    }
+
+    .planet-content {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+
+        .planet-image {
+            flex: 1;
+
+            img {
+                width: 280px;
+            }
+
+            .geology-icon {
+                width: 130px;
+                bottom: 180px;
+            }
+        }
+
+        .planet-info {
+            flex-direction: column;
+            flex: 1;
+            
+            .planet-info-text {
+                min-height: 222px;
+                align-items: flex-start;
+                justify-content: flex-start;
+
+                span {
+                    margin-top: auto;
+                }
+            }
+
+            .planet-info-selector {
+                width: 100%;
             }
         }
     }
