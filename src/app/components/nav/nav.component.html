@@ -6,7 +6,7 @@
     <nav [class]="mobileNavVisible ? '' : 'hidden'">
         <ul>
             @for (planet of planets; track planet) {
-                <li (click)="onClickSelectPlanet(planet)">
+                <li class="{{planet}}" [class.selected]="selectedPlanet === planet" (click)="onClickSelectPlanet(planet)">
                     <div class='circle {{planet}}'></div>
                     <p>{{planet}}</p>
                     <img src="/assets/icon-chevron.svg" />

@@ -73,3 +73,52 @@ nav {
         }
     }
 }
+
+@media (min-width: var.$tablet) {
+    header {
+        border-bottom: 1px solid var.$lightGrey;
+    }
+
+    .text-content {
+        border-bottom: 0;
+        justify-content: center;
+
+        > img {
+            display: none;
+        }
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        margin-top: 0;
+
+        div, img {
+            display: none;
+        }
+
+        >ul {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            >li {
+                border-bottom: 0;
+                font-weight: 700;
+                font-size: 12px;
+                color: var.$lightGrey;
+                width: 88px;
+                justify-content: center;
+
+                @each $planet, $color in var.$planet-colors {
+                    &.#{$planet} {
+                        border-bottom: 5px solid transparent;
+                        &.selected {
+                            border-bottom: 5px solid $color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

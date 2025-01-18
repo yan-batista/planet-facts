@@ -9,8 +9,9 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class NavComponent {
   mobileNavVisible: boolean = false;
-  planets: string[] = ['mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus']
+  planets: string[] = ['mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', "neptune"]
   @Output() planetSelectionEvent = new EventEmitter<string>();
+  selectedPlanet = this.planets[2];
 
   onClickSwitchMobileVisibility() {
     this.mobileNavVisible = !this.mobileNavVisible
@@ -18,6 +19,7 @@ export class NavComponent {
 
   onClickSelectPlanet(planet: string) {
     this.planetSelectionEvent.emit(planet);
+    this.selectedPlanet = planet;
     this.mobileNavVisible = false;
   }
 }
