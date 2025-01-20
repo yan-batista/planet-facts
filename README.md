@@ -26,7 +26,13 @@ Users should be able to:
 ### Screenshot
 
 <p align="center" >
+  <img src="./screenshots/desktop.png">
+  <img src="./screenshots/tablet.png">
+  <img src="./screenshots/mobile.png">
 </p>
+
+### Link
+- [Live](https://planet-facts-xi.vercel.app/)
 
 ## My process
 
