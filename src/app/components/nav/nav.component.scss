@@ -45,6 +45,15 @@ nav {
         flex-direction: row;
         align-items: center;
         padding: 28px 0;
+        cursor: pointer;
+        user-select: none;
+
+        &:hover {
+            >p {
+                color: white;
+                transition: 200ms;
+            }
+        }
 
         &:not(:last-child) {
             border-bottom: 1px solid var.$lightGrey
@@ -115,6 +124,9 @@ nav {
                         border-bottom: 5px solid transparent;
                         &.selected {
                             border-bottom: 5px solid $color;
+                            &>p {
+                                color: white;
+                            }
                         }
                     }
                 }
